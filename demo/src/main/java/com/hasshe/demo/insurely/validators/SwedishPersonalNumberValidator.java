@@ -6,14 +6,14 @@ import com.hasshe.demo.insurely.rules.SwedishPersonalNumberFormatRule;
 
 public class SwedishPersonalNumberValidator implements Validator<String>{
 
-    private Rules<String> luhnRule;
-    private Rules<String> formattingRule;
+    private final Rules<String> luhnRule;
+    private final Rules<String> formattingRule;
     private static final int SHORT_FORM = 11;
     private static final int LONG_FORM = 13;
 
-        public SwedishPersonalNumberValidator() {
-            luhnRule = new LuhnsAlgorithmRule();
-            formattingRule = new SwedishPersonalNumberFormatRule();
+    public SwedishPersonalNumberValidator() {
+        luhnRule = new LuhnsAlgorithmRule();
+        formattingRule = new SwedishPersonalNumberFormatRule();
     }
 
     @Override

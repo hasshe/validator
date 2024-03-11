@@ -5,7 +5,11 @@ import com.hasshe.demo.insurely.rules.Rules;
 
 public class PersonalNameValidator implements Validator<String>{
 
-    private Rules<String> formatRule = new PersonalNameFormatRule();
+    private final Rules<String> formatRule;
+
+    public PersonalNameValidator() {
+        formatRule = new PersonalNameFormatRule();
+    }
 
     @Override
     public boolean validate(String name) {
